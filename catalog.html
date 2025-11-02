@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Каталог — Плитка Брянск</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .catalog-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: var(--text);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .catalog {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+      border: 3px solid var(--accent);
+      border-radius: 12px;
+      background: var(--card-bg);
+      box-shadow: 0 6px 16px var(--shadow);
+      scroll-snap-type: x mandatory;
+    }
+
+    .catalog-item {
+      scroll-snap-align: start;
+      min-width: 280px;
+      height: 220px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 16px;
+      border-radius: 10px;
+      color: #222;
+      font-weight: 600;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    .catalog-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      border-radius: 10px;
+    }
+
+    .catalog-item span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .catalog-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Для тёмной темы — чуть мягче градиент */
+    [data-theme="dark"] .catalog-item {
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Плитка Брянск</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="works.html">Наши работы</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2 class="catalog-title">Каталог решений</h2>
+    <p style="text-align: center; margin-bottom: 20px; color: var(--text); opacity: 0.9;">
+      Я работаю с любыми форматами и стилями. Ниже — популярные направления, с которыми у меня большой опыт.
+    </p>
+    <div class="catalog">
+      <div class="catalog-item" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600');">
+        <span>Плитка «метро»</span>
+      </div>
+      <div class="catalog-item" style="background-image: url('https://images.unsplash.com/photo-1595526114035-0d45ed10c6c8?auto=format&fit=crop&w=600');">
+        <span>Керамогранит</span>
+      </div>
+      <div class="catalog-item" style="background-image: url('https://images.unsplash.com/photo-1600585140889-905b65a8d2e2?auto=format&fit=crop&w=600');">
+        <span>Мозаика</span>
+      </div>
+      <div class="catalog-item" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8c54c3537c?auto=format&fit=crop&w=600');">
+        <span>Плитка под дерево</span>
+      </div>
+      <div class="catalog-item" style="background-image: url('https://images.unsplash.com/photo-1600585154023-0f5c12b02a8e?auto=format&fit=crop&w=600');">
+        <span>Для ванной</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Плитка Брянск — Марат. Все работы выполняю лично.
+  </footer>
+
+  <script src="theme.js"></script>
+</body>
+</html>
